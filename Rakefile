@@ -2,6 +2,7 @@
 
 require 'sequel'
 require 'rest_client'
+require 'securerandom'
 
 namespace :db do
   desc 'Create the database for the app'
@@ -26,5 +27,15 @@ namespace :db do
 
     `sequel -M db/migrations sqlite://#{db_name}.db`
     puts "Successfully rolled back db: #{db_name}"
+  end
+end
+
+namespace :secrets do
+  desc 'Create the secrets file'
+  task :create do
+    rack_session_cookie_secret = SecureRandom.uuid
+
+    File.open('secrets.env', 'w') { |file| file.write "export RACK_SESSION_COOKIE_SECRET=#{rack_session_cookie_secret}" }
+    puts 'Successfully created secrets.env'
   end
 end
