@@ -1,0 +1,118 @@
+body {
+	font-family: sans-serif;
+	font-weight: 100;
+    color: #3b5998;
+}
+
+h1, h2, h3, h4, h5, h6, ul {
+	-webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-padding-start: 0;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    text-align: center;
+}
+
+tr {
+    margin: 10px;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background-color: #3b5998;
+    color: white;
+}
+
+.nav-heading {
+	height: 50px;
+	line-height: 50px;
+	flex: 1;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.nav-link {
+	margin: 0 10px;
+}
+
+.nav-link a {
+	color: white;
+	text-decoration: none;
+}
+
+main {
+	margin: 50px auto;
+	max-width: 1024px;
+	width: 100%;
+    text-align: center;
+}
+
+div#flash {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    background-color: #3b5998;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.flash.error {
+    color: red;
+}
+
+form {
+    width: 300px;
+    margin: 50px auto;
+}
+
+form .input-row {
+    display: flex;
+    height: 25px;
+}
+
+.input-row label {
+    flex: 1;
+    height: 25px;
+    line-height: 25px;
+}
+
+.input-row input {
+    flex: 1;
+    height: 25px;
+    line-height: 25px;
+    border: none;
+}
+
+.input-row input::placeholder {
+    color: lightgrey;
+}
+
+form .submit-button {
+    width: 150px;
+    border: none;
+    background-color: #3b5998;
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+    margin-top: 25px;
+}
+
+table {
+    margin: 100 auto;
+}

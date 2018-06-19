@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/style/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/style/layout.css" />
+	</head>
+	
+	<body>
+		<header>
+			<h1 class='nav-heading'>FakeBook</h1>
+			<ul class='nav-links'>
+				<li class='nav-link'><a href='/'>Home</a></li>
+				<% if current_user %>
+					<li class='nav-link'><a href='/money'>Money</a></li>
+					<li class='nav-link'><a href='/sessions/logout'>Sign out</a></li>
+				<% else %>
+					<li class='nav-link'><a href='/sessions/new'>Sign in</a></li>
+					<li class='nav-link'><a href='/users/new'>Register</a></li>
+				<% end %>
+			</ul>
+		</header>
+	
+		<main>
+			<%= yield %>
+		</main>
+	</body>
+
+	<%= styled_flash %>
+</html>
