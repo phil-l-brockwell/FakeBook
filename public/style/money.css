@@ -1,0 +1,32 @@
+.money-links {
+	display: flex;
+	list-style: none;
+	justify-content: center;
+}
+
+.money-links li {
+	margin: 10px;
+}
+
+.money-links li.selected {
+	text-decoration: underline;
+}
+
+.money-links li a {
+	text-decoration: none;
+}
+
+.authentication-status {
+	display: flex;
+	width: 250px;
+	margin: 0 auto;
+}
+
+.authentication-status .label,
+.authentication-status .state {
+	flex: 1;
+}
+
+.authentication-form {
+	margin: 0 auto;
+}

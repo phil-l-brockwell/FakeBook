@@ -1,0 +1,35 @@
+<%= erb :'/partials/_money_links', layout: false, locals: { selected: :payments } %>
+
+<table>
+	<tr>
+		<th>status</th>
+		<th>recipient id</th>
+		<th>payment id</th>
+		<th>currency</th>
+		<th>amount</th>
+	</tr>
+
+	<% if @payments&.any? %>
+		<% @payments.each do |payment| %>
+			<tr>
+				<td><%= payment['status'] %></td>
+				<td><%= payment['recipient_id'] %></td>
+				<td><%= payment['id'] %></td>
+				<td><%= payment['currency'] %></td>
+				<td><%= payment['amount'] %></td>
+			</tr>
+		<% end %>
+	<% end %>
+</table>
+
+<form method='post' action='/money/payments'>
+	<div class='input-row'>
+		<label for='recipient_id'>Recipient ID:</label>
+		<input name='recipient_id' type='text' placeholder='Enter Recipient ID' />
+	</div>
+	<div class='input-row'>
+		<label for='amount'>Amount:</label>
+		<input name='amount' type='number' min='1' step='any' placeholder='Enter Amount' />
+	</div>
+	<input type='submit' value='Create Payment' class='submit-button'>
+</form>

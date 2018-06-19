@@ -10,11 +10,13 @@ require_relative 'lib/coolpay/client'
 
 require_relative 'routes/session'
 require_relative 'routes/user'
+require_relative 'routes/money'
 
 class FakeBook < Sinatra::Base
   register Sinatra::Flash
   register Sinatra::SessionRoutes
   register Sinatra::UserRoutes
+  register Sinatra::MoneyRoutes
 
   DEFAULT_PAYMENTS_PROVIDER = Coolpay
 

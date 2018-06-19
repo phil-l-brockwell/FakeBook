@@ -1,0 +1,25 @@
+<%= erb :'/partials/_money_links', layout: false, locals: { selected: :settings } %>
+
+<form method='post' action='<%= "/users/#{current_user.id}" %>'>
+	<input type='hidden' name='_method' value='put' />
+	<div class='input-row'>
+		<label for='coolpay_username'>Username</label>
+		<input name='coolpay_username' type='text' value='<%= current_user.coolpay_username %>' placeholder='Enter Username' />
+	</div>
+	<div class='input-row'>
+		<label for='coolpay_api_key'>API Key</label>
+		<input name='coolpay_api_key' type='text' value='<%= current_user.coolpay_api_key %>' placeholder='Enter API Key' />		
+	</div>
+	<input type='submit' value='Update' class='submit-button'>
+</form>
+
+<div class='authentication-status'>
+	<p class='label'>Status:</p>
+	<p class='state'><%= current_user.decorate.coolpay_status %></p>
+</div>
+
+<form method='post' action='/money/authenticate' class='authentication-form'>
+	<input name='coolpay_username' value='<%= current_user.coolpay_username %>' type='hidden' />
+	<input name='coolpay_api_key' value='<%= current_user.coolpay_api_key %>' type='hidden' />
+	<input type='submit' value='Authenticate' class='submit-button'>
+</form>

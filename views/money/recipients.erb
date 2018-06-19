@@ -1,0 +1,24 @@
+<%= erb :'/partials/_money_links', layout: false, locals: { selected: :recipients } %>
+
+<table>
+	<tr>
+		<th>name</th>
+		<th>recipient id</th>
+	</tr>
+	<% if @recipients&.any? %>
+		<% @recipients.each do |recipient| %>
+			<tr>
+				<td><%= recipient['name'] %></td>
+				<td><%= recipient['id'] %></td>
+			</tr>
+		<% end %>
+	<% end %>
+</table>
+
+<form method='post' action='/money/recipients'>
+	<div class='input-row'>
+		<label for='recipient_name'>Recipient Name:</label>
+		<input name='recipient_name' type='text' placeholder='Enter Recipient ID' />
+	</div>
+	<input type='submit' value='Create Recipient' class='submit-button' />
+</form>

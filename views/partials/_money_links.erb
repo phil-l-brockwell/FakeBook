@@ -1,0 +1,12 @@
+<% selected ||= '' %>
+
+<section class='money-header'>
+	<h2>Payments Service</h2>
+	<h6>Provided by <%= @payments_provider_name %></h6>
+
+	<ul class='money-links'>
+		<% [:recipients, :payments, :settings].each do |option| %>
+			<li class='<%= 'selected' if option == selected %>'><a href='/money/<%= option %>'><%= option %></a></li>	
+		<% end %>
+	</ul>
+</section>
