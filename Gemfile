@@ -8,6 +8,8 @@ gem 'sinatra', '~> 2.0.3' # web-development DSL
 gem 'sinatra-flash', '~> 0.3.0' # flash messaging
 gem 'rest-client', '~> 2.0' # Simple HTTP and REST client
 gem 'bcrypt', '~> 3.1.12' # wrapper for secure password hashing algorithm
+gem 'warden', '~> 1.2.7' # authentication framework
+gem 'dotenv', '~> 2.4.0' # loads environment variables
 
 group :test do
   gem 'database_cleaner', '~> 1.7.0' # ensure clean state for testing
