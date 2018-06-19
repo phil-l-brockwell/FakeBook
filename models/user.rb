@@ -4,9 +4,12 @@ require 'active_support'
 require 'bcrypt'
 require 'sequel'
 require 'sinatra/base'
+require 'sinatra/decorator'
+require './decorators/user'
 
 class User < Sequel::Model
   include BCrypt
+  include Sinatra::Decorator::Decoratable
 
   def password
     @password ||= Password.new(password_hash)
