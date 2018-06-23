@@ -32,10 +32,11 @@ module Sinatra
         if response.success?
           warden.set_user(response.details[:user])
           flash.next[:alert] = 'User successfully registered'
+          redirect to '/'
         else
           flash.next[:error] = response.error_message
+          erb :'/users/new'
         end
-        redirect to '/'
       end
     end
   end
