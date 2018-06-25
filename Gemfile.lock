@@ -26,6 +26,7 @@ GEM
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
+    rake (12.3.1)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -71,6 +72,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.12)
   database_cleaner (~> 1.7.0)
   dotenv (~> 2.4.0)
+  rake (~> 12.3.1)
   rest-client (~> 2.0)
   rspec (~> 3.4.0)
   sequel (~> 5.9.0)
