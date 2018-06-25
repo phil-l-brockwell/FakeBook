@@ -4,13 +4,8 @@ A Sinatra app built to integrate with the fictional JSON 'Coolpay' api.
 ## Getting Started
 Clone it: `git clone git@github.com:philbrockwell1984/fakebook.git`\
 CD into it: `cd fakebook`\
-Bundle it: `bundle`\
-Create the log file: `touch log/db.log`\
-Create the dbs: `rake db:create env=test && rake db:create env=development`\
-Migrate the dbs: `rake db:migrate env=test && rake db:migrate env=development`\
-Create the secrets file: `rake secrets:create`\
-Run the App: `bundle exec rackup -p 3000`\
-Check it out in the browser: `http://localhost:3000/`
+Initialize the app: `bundle exec rake app:init`\
+Follow the instructions on screen!
 
 ## Improvements
 ### Front end
